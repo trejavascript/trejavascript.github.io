@@ -1,4 +1,4 @@
-main();
+/* main();
 
 //
 // Start here
@@ -51,7 +51,7 @@ function main() {
     }
 
     /* creates a shader of the given type,
-     uploads the source and compiles it. */
+     uploads the source and compiles it. /
     function loadShader(gl, type, source) {
       const shader = gl.createShader(type);
 
@@ -128,7 +128,7 @@ function main() {
       used to simulate the distortion of perspective in a camera.
       our field of view is 45 degrees, with a width/height
       ratio that matches the display size of the canvas
-      and we only want to see objects between 0..1 units and 100 units away from camera. */
+      and we only want to see objects between 0..1 units and 100 units away from camera. /
       const fieldOfView = 45 * Math.PI / 180; // in radians
       const aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
       const zNear = 0.1;
@@ -144,17 +144,17 @@ function main() {
         zFar);
 
       /* set the drawing position a bit to where we want
-      to start the drawing. */
+      to start the drawing. /
       const modelViewMatrix = mat4.create();
 
       /* now move the drawing position a bit to where we want
-      to start the drawing the square */
+      to start the drawing the square /
       mat4.translate(modelViewMatrix, // destination matrix
         modelViewMatrix, // matrix to translate
         [-0.0, 0.0, -6.0]) // amount to translate
 
       /* tell WebGL how to pull out positions from the positions
-      buffer into the vertexPosition attribute. */
+      buffer into the vertexPosition attribute. /
       {
         const numComponents = 2; //pull out 2 values per iteration
         const type = gl.FLOAT; // the data in the buffer is 32bit
@@ -162,10 +162,10 @@ function main() {
         const stride = 0;
         /* how many bytes to get from one
                              set of values to the next. */
-        /* 0 = use type and numComponents above */
+        /* 0 = use type and numComponents above /
         const offset = 0;
         /* how many bytes inside the buffer
-                             to start from. */
+                             to start from. /
         gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
         gl.vertexAttribPointer(
           programInfo.attribLocations.vertexPosition,
@@ -196,3 +196,4 @@ function main() {
       }
     }
   }
+*/
