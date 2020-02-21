@@ -153,7 +153,7 @@ function main() {
         modelViewMatrix, // matrix to translate
         [-0.0, 0.0, -6.0]) // amount to translate
 
-      /* tell WebGL how to pull out the positions from the positions
+      /* tell WebGL how to pull out positions from the positions
       buffer into the vertexPosition attribute. */
       {
         const numComponents = 2; //pull out 2 values per iteration
@@ -196,3 +196,4 @@ function main() {
       }
     }
   }
+}
