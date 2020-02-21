@@ -1,36 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@trejavascript
-Learn Git and GitHub without any code!
-
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-mdn /
-webgl-examples
-
-39
-675
-
-    716
-
-Code
-Issues 0
-Pull requests 1
-Actions
-Projects 0
-Security
-Insights
-webgl-examples/tutorial/sample2/webgl-demo.js /
-@greggman greggman Refactor samples 3982ccc on Aug 21, 2017
-@Elchi3
-@greggman
-@antonin-lebrard
-239 lines (186 sloc) 6.31 KB
-You're using code navigation to jump to definitions or references.
-Learn more or give us feedback
 main();
 
 //
@@ -267,17 +234,3 @@ function loadShader(gl, type, source) {
 
   return shader;
 }
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
