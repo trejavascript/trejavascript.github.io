@@ -79,9 +79,9 @@ function initBuffers(gl) {
   // Now create an array of positions for the square.
 
   const positions = [
-     1.0,  1.0,
-    -1.0,  1.0,
-     1.0, -1.0,
+    1.0, 1.0,
+    -1.0, 1.0,
+    1.0, -1.0,
     -1.0, -1.0,
   ];
 
@@ -90,8 +90,8 @@ function initBuffers(gl) {
   // JavaScript array, then use it to fill the current buffer.
 
   gl.bufferData(gl.ARRAY_BUFFER,
-                new Float32Array(positions),
-                gl.STATIC_DRAW);
+    new Float32Array(positions),
+    gl.STATIC_DRAW);
 
   return {
     position: positionBuffer,
@@ -102,10 +102,10 @@ function initBuffers(gl) {
 // Draw the scene.
 //
 function drawScene(gl, programInfo, buffers) {
-  gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
-  gl.clearDepth(1.0);                 // Clear everything
-  gl.enable(gl.DEPTH_TEST);           // Enable depth testing
-  gl.depthFunc(gl.LEQUAL);            // Near things obscure far things
+  gl.clearColor(0.0, 0.0, 0.0, 1.0); // Clear to black, fully opaque
+  gl.clearDepth(1.0); // Clear everything
+  gl.enable(gl.DEPTH_TEST); // Enable depth testing
+  gl.depthFunc(gl.LEQUAL); // Near things obscure far things
 
   // Clear the canvas before we start drawing on it.
 
@@ -118,7 +118,7 @@ function drawScene(gl, programInfo, buffers) {
   // and we only want to see objects between 0.1 units
   // and 100 units away from the camera.
 
-  const fieldOfView = 45 * Math.PI / 180;   // in radians
+  const fieldOfView = 45 * Math.PI / 180; // in radians
   const aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
   const zNear = 0.1;
   const zFar = 100.0;
@@ -127,10 +127,10 @@ function drawScene(gl, programInfo, buffers) {
   // note: glmatrix.js always has the first argument
   // as the destination to receive the result.
   mat4.perspective(projectionMatrix,
-                   fieldOfView,
-                   aspect,
-                   zNear,
-                   zFar);
+    fieldOfView,
+    aspect,
+    zNear,
+    zFar);
 
   // Set the drawing position to the "identity" point, which is
   // the center of the scene.
@@ -139,9 +139,9 @@ function drawScene(gl, programInfo, buffers) {
   // Now move the drawing position a bit to where we want to
   // start drawing the square.
 
-  mat4.translate(modelViewMatrix,     // destination matrix
-                 modelViewMatrix,     // matrix to translate
-                 [-0.0, 0.0, -6.0]);  // amount to translate
+  mat4.translate(modelViewMatrix, // destination matrix
+    modelViewMatrix, // matrix to translate
+    [-0.0, 0.0, -6.0]); // amount to translate
 
   // Tell WebGL how to pull out the positions from the position
   // buffer into the vertexPosition attribute.
@@ -153,14 +153,14 @@ function drawScene(gl, programInfo, buffers) {
     const offset = 0;
     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
     gl.vertexAttribPointer(
-        programInfo.attribLocations.vertexPosition,
-        numComponents,
-        type,
-        normalize,
-        stride,
-        offset);
+      programInfo.attribLocations.vertexPosition,
+      numComponents,
+      type,
+      normalize,
+      stride,
+      offset);
     gl.enableVertexAttribArray(
-        programInfo.attribLocations.vertexPosition);
+      programInfo.attribLocations.vertexPosition);
   }
 
   // Tell WebGL to use our program when drawing
@@ -170,13 +170,13 @@ function drawScene(gl, programInfo, buffers) {
   // Set the shader uniforms
 
   gl.uniformMatrix4fv(
-      programInfo.uniformLocations.projectionMatrix,
-      false,
-      projectionMatrix);
+    programInfo.uniformLocations.projectionMatrix,
+    false,
+    projectionMatrix);
   gl.uniformMatrix4fv(
-      programInfo.uniformLocations.modelViewMatrix,
-      false,
-      modelViewMatrix);
+    programInfo.uniformLocations.modelViewMatrix,
+    false,
+    modelViewMatrix);
 
   {
     const offset = 0;
