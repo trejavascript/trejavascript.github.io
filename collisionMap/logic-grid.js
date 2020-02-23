@@ -165,6 +165,7 @@ Hero.prototype._collide = function(dirx, diry) {
   }
 };
 
+
 Game.load = function() {
   return [
     Loader.loadImage('tiles', '/assets/tiles.png'),

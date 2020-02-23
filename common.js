@@ -6,6 +6,7 @@ var Loader = {
   images: {}
 };
 
+
 Loader.loadImage = function(key, src) {
   var img = new Image();
 
